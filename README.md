@@ -21,18 +21,6 @@ In this design, there is a single server that acts as the entry point for your a
 
 - **If the request is to be routed to the API server**, then it will first go through a load-balancing algorithm to determine which API server to send the request to. We will be using the basic Round Robin load-balancing algorithm for our site. Once the request is routed to an API server and the response is sent back to the proxy server, it will then be sent to the client. The client isn’t directly communicating with either of the API servers.
 
-### What is Round Robin Load Balancing?
-
-Round Robin load balancing is a method of distributing traffic across multiple servers or nodes in a network. In this approach, the load balancer assigns requests to each server in a rotating manner, meaning that each server takes turns serving the requests. 
-
-For example, if there are three servers A, B, and C:
-- The first request will be sent to server A.
-- The second to server B.
-- The third to server C.
-- The fourth to A, the fifth to B, and so on.
-
-This cycle repeats, ensuring that each server receives an equal share of the traffic and prevents any one server from becoming overwhelmed with requests. Round Robin load balancing is a simple and effective way to distribute traffic, but it may not be suitable for all applications, particularly those with varying workload patterns or resource requirements. For our learning purposes in this project, it is a sufficient algorithm to implement for our load-balancing needs.
-
 ## What You Need Before Starting
 
 1. **Install Docker Desktop on your local computer (not your sandbox):**
